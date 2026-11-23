@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ghost Listings — Evidence Dossier for Google Maps competitors</title>
+<meta name="description" content="One trade, one city: 25 competitor listings on Google Maps audited from public data, ranked by red flags, with a citable evidence sheet for each listing where the public proof holds. $79, one time.">
+<meta name="robots" content="noindex,follow">
+<link rel="canonical" href="https://imbertjules.github.io/gbp-ghost-listings/">
+<style>
+  :root{
+    --ink:#12161c; --ink-2:#3b4657; --gris:#6b7a8f; --trait:#e2e7ee;
+    --papier:#fbfbf9; --carte:#fff; --accent:#0b5c4a; --accent-bg:#eaf4f0; --alerte:#8a3b12; --alerte-bg:#fdf1e9;
+    --radius:10px;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--papier);color:var(--ink);
+    font:17px/1.62 "Iowan Old Style","Palatino Linotype",Georgia,serif}
+  .wrap{max-width:52rem;margin:0 auto;padding:0 1.25rem}
+  header.site{border-bottom:1px solid var(--trait);background:#fff}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.8rem 1.25rem}
+  .marque{font:600 .95rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.02em}
+  .langues{font:500 .85rem/1 system-ui,sans-serif}
+  .langues a{color:var(--gris);text-decoration:none;padding:.35rem .2rem}
+  .langues a[aria-current]{color:var(--ink);font-weight:700}
+  h1{font-size:clamp(1.8rem,4.6vw,2.7rem);line-height:1.16;margin:2.4rem 0 .8rem;letter-spacing:-.01em}
+  h2{font-size:clamp(1.25rem,2.6vw,1.55rem);line-height:1.25;margin:2.8rem 0 .7rem}
+  h3{font:600 1.02rem/1.35 system-ui,sans-serif;margin:1.6rem 0 .4rem}
+  p{margin:.7rem 0}
+  .chapo{font-size:1.12rem;color:var(--ink-2);max-width:44rem}
+  .fil{font:500 .82rem/1.4 system-ui,sans-serif;color:var(--gris);text-transform:uppercase;letter-spacing:.09em;margin:2rem 0 0}
+  .carte{background:var(--carte);border:1px solid var(--trait);border-radius:var(--radius);padding:1.15rem 1.25rem;margin:1.2rem 0}
+  .grille{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+  .grille .carte{margin:0}
+  ul,ol{padding-left:1.15rem}
+  li{margin:.4rem 0}
+  .chiffres{display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:.9rem;margin:1.4rem 0}
+  .chiffre{background:var(--carte);border:1px solid var(--trait);border-radius:var(--radius);padding:1rem}
+  .chiffre b{display:block;font:700 2rem/1 system-ui,sans-serif;color:var(--accent);letter-spacing:-.02em}
+  .chiffre span{display:block;font:500 .84rem/1.35 system-ui,sans-serif;color:var(--gris);margin-top:.45rem}
+  .acheter{background:var(--carte);border:1px solid var(--trait);border-radius:14px;padding:1.6rem 1.35rem;margin:2rem 0;text-align:center}
+  .acheter .prix{font:700 2.6rem/1 system-ui,sans-serif;letter-spacing:-.03em;margin:0}
+  .acheter .prix small{font:500 .95rem/1 system-ui,sans-serif;color:var(--gris);letter-spacing:0}
+  .bouton{display:inline-block;margin:1rem 0 .6rem;padding:.95rem 2rem;border-radius:8px;
+    background:var(--accent);color:#fff;text-decoration:none;
+    font:600 1.05rem/1 system-ui,sans-serif;border:2px solid var(--accent)}
+  .bouton:hover{background:#08473a;border-color:#08473a}
+  .bouton[aria-disabled="true"]{background:#9aa6b5;border-color:#9aa6b5;cursor:not-allowed}
+  .petit{font:.86rem/1.55 system-ui,sans-serif;color:var(--gris)}
+  .note{border-left:3px solid var(--alerte);background:var(--alerte-bg);padding:.85rem 1.1rem;border-radius:0 8px 8px 0;margin:1.3rem 0}
+  .note.verte{border-left-color:var(--accent);background:var(--accent-bg)}
+  table{border-collapse:collapse;width:100%;font:400 .88rem/1.45 system-ui,sans-serif;margin:1rem 0}
+  caption{text-align:left;font:500 .84rem/1.4 system-ui,sans-serif;color:var(--gris);padding-bottom:.5rem}
+  th,td{text-align:left;padding:.5rem .55rem;border-bottom:1px solid var(--trait);vertical-align:top}
+  th{font-weight:600;color:var(--gris);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em}
+  .masque{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.82rem;color:var(--gris)}
+  .score{font-weight:700;text-align:center}
+  footer{border-top:1px solid var(--trait);margin-top:3.5rem;padding:1.6rem 0 2.6rem;font-size:.85rem;color:var(--gris)}
+  footer a{color:var(--ink-2)}
+  a{color:var(--accent)}
+  .ancre{scroll-margin-top:1rem}
+  @media (max-width:32rem){ body{font-size:16px} .acheter .prix{font-size:2.1rem} }
+</style>
+</head>
+<body>
+<div style="background:#8a3b12;color:#fff;font:600 .9rem/1.4 system-ui,sans-serif;padding:.6rem 1.25rem;text-align:center">
+Aperçu — la page n'est pas encore ouverte à la vente : le lien de paiement sera branché ici.
+</div>
+
+
+<header class="site">
+  <div class="wrap">
+    <span class="marque">Ghost Listings Dossier</span>
+    <nav class="langues" aria-label="Language"><a href="./" aria-current="page">EN</a> · <a href="fr.html">FR</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <p class="fil">Evidence dossier · Google Maps competitor listings</p>
+
+  <h1>Proof you can file against listings that may not exist.</h1>
+
+  <p class="chapo">One trade, one city. We read the public pages of the 25 listings that rank around you,
+  rank them by visible red flags, and hand you a citable evidence sheet for every listing where the
+  public proof holds — plus the complaint text to paste into Google’s own form.</p>
+
+  <div class="acheter" id="acheter">
+    <p class="prix">$79 <small>· one time</small></p>
+    <p class="petit">25 listings audited · ranking of all 25 · evidence sheet per solid listing · pre-filled complaint text</p>
+    <!-- BOUTON -->
+    <a class="bouton" aria-disabled="true" id="cta" href="#acheter" rel="noopener">Buy the dossier — $79</a>
+    <p class="petit" role="status" id="cta-etat">Preview — the payment link is not connected yet.</p>
+    <p class="petit">Card payment handled by Polar, which acts as merchant of record. No subscription, no account to create.</p>
+  </div>
+
+  <h2>What you actually receive</h2>
+  <div class="grille">
+    <div class="carte">
+      <h3>1 · The full ranking of 25</h3>
+      <p>A table of every listing audited, with its score, the red flags visible on its public page,
+      and the field each flag comes from. Nothing hidden: low-score listings are listed too.</p>
+    </div>
+    <div class="carte">
+      <h3>2 · An evidence sheet per solid listing</h3>
+      <p>For each listing where the public proof holds: the facts, the quoted Google rule with its
+      source link, and the two listings that contradict each other where that is the case.</p>
+    </div>
+    <div class="carte">
+      <h3>3 · The complaint text, ready to paste</h3>
+      <p>Written in your name, for Google’s “third parties: report a violation” form. You file it
+      from your own business account — we never file on your behalf.</p>
+    </div>
+    <div class="carte">
+      <h3>4 · A PDF, English or French</h3>
+      <p>Delivered by email, in the language you ask for, with the ranking table as a CSV so you can
+      sort or forward it.</p>
+    </div>
+  </div>
+
+  <h2>The promise, exactly</h2>
+  <p>These are the figures of the sample dossier we ran before writing this page — a real zone,
+  Lyon (France), locksmiths, 25 listings read on 23 November 2026 between 10:26 and 10:52 in the
+  morning, no Google account, no paid data source:</p>
+
+  <div class="chiffres">
+    <div class="chiffre"><b>25</b><span>listings read and ranked</span></div>
+    <div class="chiffre"><b>10</b><span>with at least two independent public red flags</span></div>
+    <div class="chiffre"><b>4</b><span>with solid, citable proof (shared address or duplicated name)</span></div>
+    <div class="chiffre"><b>26 min</b><span>of public reading per zone, before writing</span></div>
+  </div>
+
+  <div class="note">
+    <p><strong>We do not sell “25 proofs”.</strong> In a typical zone of 25 listings, four to six hold
+    up in front of Google, and the rest are arguments, not proof. A page promising 25 proofs out of 25
+    listings would be inventing them. You get the ranking of all 25, the argument for each one, and a
+    real evidence sheet for the ones that hold — the first page of your dossier states those counts
+    before anything else.</p>
+  </div>
+
+  <p>Two rules often sold with this kind of audit are <em>not</em> used here, because they cannot be
+  measured honestly from public pages: the <strong>number of photos</strong> on a listing (Google does
+  not expose a usable counter) and the <strong>date of the first review</strong> (the public list no
+  longer offers an oldest-first sort — reaching the first review means scrolling the whole list).
+  Selling you a verdict on either would be an opinion dressed as a measurement.</p>
+
+  <h2>What this dossier does not do</h2>
+  <ul>
+    <li><strong>It does not file anything for you.</strong> No report is submitted anywhere. The
+    complaint goes from your account, in your name — that is also what makes it credible.</li>
+    <li><strong>It promises no removal.</strong> Google decides, and only Google. What is sold is the
+    evidence and the text, not the outcome.</li>
+    <li><strong>It does not call anyone a fraud.</strong> A shared address can be a genuine shared
+    workshop; a duplicated name can be a second branch. The dossier reports public facts, scores them,
+    and quotes Google’s own rules. The judgement is Google’s.</li>
+    <li><strong>It uses no private data.</strong> Only what any visitor sees on the public listing pages:
+    display name, category, address, phone, website, rating, review count, opening hours.</li>
+  </ul>
+
+  <h2>See the shape of it</h2>
+  <p><a href="sample.html">The sample dossier, anonymised →</a> It is the Lyon locksmith dossier with
+  every company name, street address and phone number masked. We show the form of the deliverable,
+  not accusations against named businesses.</p>
+
+  <h2>How the 48 hours work</h2>
+  <ol>
+    <li>You pay. No account, no subscription.</li>
+    <li>You reply to the receipt email with two things: <strong>your trade</strong> and
+    <strong>your city</strong> (plus the neighbourhood or the addresses you already know, if you have
+    them). One minute, in English or French.</li>
+    <li>Within <strong>48 business hours</strong> you receive the PDF and the CSV by email. If the
+    zone turns out too thin to audit (fewer than ten listings), we tell you before starting rather
+    than sell you an empty ranking.</li>
+  </ol>
+
+  <h2>Questions</h2>
+  <h3>Is this legal?</h3>
+  <p>Yes. Every field in the dossier is on a public page that any visitor can open. Nothing is scraped
+  from a private account, no Google account is used, no personal data is collected about individuals —
+  only the business information a listing publishes.</p>
+  <h3>Who buys this?</h3>
+  <p>The local tradesperson who sees phantom competitors above his own listing — locksmiths,
+  plumbers, heating engineers, garages — and the local SEO agency that maintains listings for several
+  of them and needs a dossier per city.</p>
+  <h3>Will my competitors be told?</h3>
+  <p>No. Nothing is sent to anyone. You are the only recipient of the dossier; whether you file a
+  complaint, and when, is yours to decide.</p>
+  <h3>Can I ask for a different city or trade?</h3>
+  <p>Yes — that is the product. One dossier covers one trade in one city. For several cities, buy one
+  per city.</p>
+  <h3>What if the dossier finds nothing?</h3>
+  <p>Then it says so, with the ranking to prove it. A zone where all 25 listings look genuine is a
+  real answer: it tells you where <em>not</em> to spend your time. You still receive the ranking.</p>
+
+  <div class="acheter">
+    <p class="prix">$79 <small>· one time</small></p>
+    <a class="bouton" aria-disabled="true" href="#acheter" rel="noopener">Buy the dossier — $79</a>
+    <p class="petit">Payment by card, handled by Polar (merchant of record). Delivered within 48 business hours.</p>
+  </div>
+
+  <h2 id="mentions">Publisher</h2>
+  <p class="petit">Jules Imbert — sole trader (EI JULES IMBERT, micro-entreprise), SIREN 808 657 993,
+  registered at 36 rue Lautréamont, 93300 Aubervilliers, France. Contact:
+  <a href="mailto:imbertjules@gmail.com">imbertjules@gmail.com</a>. VAT not applicable, art. 293 B of
+  the French tax code. The dossier is a documentation service: it is not legal advice, and it does not
+  guarantee any decision by Google.</p>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Ghost Listings Dossier</strong> — public-data audit of competitor listings on Google
+    Maps, one trade and one city per dossier.<br>
+    Sample figures come from a real audit of 25 locksmith listings in Lyon, 23 November 2026.
+    <a href="fr.html">Version française</a> · <a href="sample.html">Anonymised sample</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
